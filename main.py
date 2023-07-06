@@ -1,23 +1,41 @@
 from data_uploader import DataUploader
 from data_requester import DataRequester
 import json
-import time 
 import re 
-from datetime import timedelta,datetime
+from datetime import timedelta, datetime
 
 requester = DataRequester()
 uploader = DataUploader()
 
+def get_date():
+    date_hour_now = datetime.now()
+    return date_hour_now
+
+def get_date_format_json(date):
+    date_hour_formated = date.strftime("%Y/%m/%d %H:%M:%S")
+    return date_hour_formated
+
+def get_date_format_file(date):
+    date_hour_formated = date.strftime("%Y%m%d_%H%M%S")
+    return date_hour_formated
+
+
 def process_teams():
     response = requester.request_teams('Brazil')
-    json_data = json.dumps(response['response'])
-    uploader.upload_file_to_S3('teams_brazil/teams.json',json_data)
+    date = get_date()
+    ingestion_date = get_date_format_json(date=date)
+    response['ingestion_date'] = ingestion_date
+    dt_file_name = get_date_format_file(date=date)
+    json_data = json.dumps(response)    
+    file_name = f'teams_brazil/teams_{dt_file_name}.json'
+    uploader.upload_file_to_S3(file_name,json_data)
+
 
 def process_teams_statistics():
     response_league = requester.request_league(71)
     for season in response_league['response'][0]['seasons']:
         year = season['year']
-        if int(year) >= 2022:
+        if int(year) >= 2018:
             response_standings= requester.request_standings(71,year)
             championship = response_standings['response'][0]['league']['name']
             championship = championship.lower().replace(' ', '_')
@@ -26,10 +44,14 @@ def process_teams_statistics():
                 team_id = team['team']['id']
                 team_name = team['team']['name']
                 team_name = team_name.lower().replace(' ', '-')
-                time.sleep(5)
                 response_team = requester.request_teams_statistics(team_id,71,season)
+                date = get_date()
+                ingestion_date = get_date_format_json(date=date)
+                response_team['response']['ingestion_date'] = ingestion_date
+                dt_file_name = get_date_format_file(date=date)
                 json_data = json.dumps(response_team['response'])
-                uploader.upload_file_to_S3(f'teams_statistics/{championship}/{season}/{team_name}/statistics.json',json_data)
+                file_name = f'teams_statistics/{championship}/{season}/{team_name}/statistics_{team_name}_{dt_file_name}.json'
+                uploader.upload_file_to_S3(file_name,json_data)
         else:
             continue
 
@@ -39,8 +61,16 @@ def process_standings():
         year = season['year']
         if int(year) >= 2018:
             response_standings = requester.request_standings(71,year)
-            json_data = json.dumps(response_standings['response'])
-            uploader.upload_file_to_S3(f'teams_standings/{year}/standings.json',json_data)
+            date = get_date()
+            ingestion_date = get_date_format_json(date=date)
+            dt_file_name = get_date_format_file(date=date)
+            standings = {
+                            "response": response_standings['response'],
+                            "ingestion_date": ingestion_date
+                        }
+            json_data = json.dumps(standings)
+            file_name = f'teams_standings/{year}/standings_{dt_file_name}.json'
+            uploader.upload_file_to_S3(file_name,json_data)
         else:
             continue
 
@@ -59,24 +89,33 @@ def process_fixtures():
                 team_name = team['team']['name']
                 team_name = team_name.lower().replace(' ', '-')
                 response_fixtures = requester.request_fixtures(71,year,team_id)
-                json_data = json.dumps(response_fixtures['response'])
-                uploader.upload_file_to_S3(f'teams_fixtures/{championship}/{season}/{team_name}/fixtures.json',json_data)
+                date = get_date()
+                ingestion_date = get_date_format_json(date=date)
+                dt_file_name = get_date_format_file(date=date)
+                fixtures = {
+                            "response": response_fixtures['response'],
+                            "ingestion_date": ingestion_date
+                        }
+                json_data = json.dumps(fixtures)
+                file_name = f'teams_fixtures/{championship}/{season}/{team_name}/fixtures_{dt_file_name}.json'
+                uploader.upload_file_to_S3(file_name,json_data)
         else:
             continue
 
-# TODO Fix this to add fixture_id on the json files  
 def process_fixtures_statistics(): 
     response = requester.request_league(71)
     for season in response['response'][0]['seasons']:
         year = season['year']
         if int(year) >= 2018:
-            response_standings= requester.request_standings(71,year)
+            response_standings = requester.request_standings(71, year)
             championship = response_standings['response'][0]['league']['name']
             championship = championship.lower().replace(' ', '_')
             season = response_standings['response'][0]['league']['season']
+            
             for team in response_standings['response'][0]['league']['standings'][0]:
                 team_id = team['team']['id']
-                response_fixtures = requester.request_fixtures(71,year,team_id)
+                response_fixtures = requester.request_fixtures(71, year, team_id)
+                
                 for fixture in response_fixtures['response']:
                     fixture_id = fixture['fixture']['id']
                     team_home = fixture['teams']['home']['name']
@@ -86,11 +125,20 @@ def process_fixtures_statistics():
                     round = fixture['league']['round']
                     round = re.sub(r'\s*-\s*', '_', round.lower())
                     round = round.replace(' ', '_')
-                    file_name = f'teams_fixtures_statistics/{championship}/{season}/{round}/{team_home}X{team_away}.json'
+                    date = get_date()
+                    ingestion_date = get_date_format_json(date=date)
+                    dt_file_name = get_date_format_file(date=date)
+                    file_name = f'teams_fixtures_statistics/{championship}/{season}/{round}/{team_home}X{team_away}_{dt_file_name}.json'
+
                     if not uploader.blob_exists(file_name):
                         response_fixt_statistics = requester.request_fixtures_statistics(fixture_id)
-                        json_data = json.dumps(response_fixt_statistics['response'])
-                        uploader.upload_file_to_S3(file_name,json_data)
+                        fixture_statistics = {
+                            "fixture_id": fixture_id,
+                            "response": response_fixt_statistics['response'],
+                            "ingestion_date": ingestion_date
+                        }
+                        json_data = json.dumps(fixture_statistics)
+                        uploader.upload_file_to_S3(file_name, json_data)
                     else:
                         print(f'File already found: {file_name}')
                         continue
@@ -118,11 +166,15 @@ def process_fixtures_predictions():
                     round = fixture['league']['round']
                     round = re.sub(r'\s*-\s*', '_', round.lower())
                     round = round.replace(' ', '_')
-                    file_name = f'teams_fixtures_predictions/{championship}/{season}/{round}/{team_home}X{team_away}_predictions.json'
+                    date = get_date()
+                    ingestion_date = get_date_format_json(date=date)
+                    dt_file_name = get_date_format_file(date=date)
+                    file_name = f'teams_fixtures_predictions/{championship}/{season}/{round}/{team_home}X{team_away}_predictions_{dt_file_name}.json'
                     if not uploader.blob_exists(file_name):
                         response_fixt_predictions = requester.request_fixtures_predictions(fixture_id)
                         predict = response_fixt_predictions['response'][0]['predictions']
                         predict['fixture_id'] = fixture_id
+                        predict['ingestion_date'] = ingestion_date
                         json_data = json.dumps(predict)
                         uploader.upload_file_to_S3(file_name,json_data)
                     else:
@@ -148,7 +200,10 @@ def process_fixtures_odds():
             round = fixture['league']['round']
             round = re.sub(r'\s*-\s*', '_', round.lower())
             round = round.replace(' ', '_')
-            file_name = f'teams_fixtures_odds_pre/{championship}/{season}/{round}/{team_home}X{team_away}_odds_pre.json'
+            date = get_date()
+            ingestion_date = get_date_format_json(date=date)
+            dt_file_name = get_date_format_file(date=date)           
+            file_name = f'teams_fixtures_odds_pre/{championship}/{season}/{round}/{team_home}X{team_away}_odds_pre_{dt_file_name}.json'
             date = fixture['fixture']['date']
             fixture_date = datetime.fromisoformat(date).date()
             dia_atual = datetime.today().date()
@@ -161,18 +216,22 @@ def process_fixtures_odds():
                     #bet_id - 1. quem vai ganhar? 
                     #bookmaker - bet365
                     response_fixt_odds_pre = requester.request_fixtures_odds_pre_match(fixture_id,1,8)
-                    json_data = json.dumps(response_fixt_odds_pre['response'])
+                    fixt_odds_pre = {
+                        "response": response_fixt_odds_pre['response'],
+                        "ingestion_date": ingestion_date
+                    }
+                    json_data = json.dumps(fixt_odds_pre)
                     uploader.upload_file_to_S3(file_name,json_data)
                 else:
                     print(f'File already found: {file_name}')
                     continue
 
 # TODO CREATE DAGS IN AIRFLOW FOR EACH BATCH OR STREAMING PROCESS  
-process_teams()
-process_teams_statistics()
-process_standings()
-process_fixtures()
-process_fixtures_statistics()
-process_fixtures_predictions()
-process_fixtures_odds()
+#process_teams()
+#process_teams_statistics()
+#process_standings()
+#process_fixtures()
+#process_fixtures_statistics()
+#process_fixtures_predictions()
+#process_fixtures_odds()
 
