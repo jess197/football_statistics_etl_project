@@ -3,4 +3,5 @@ venv
 target/
 dbt_packages/
 logs/
+.gitkeep
 # end dbt Cloud content
