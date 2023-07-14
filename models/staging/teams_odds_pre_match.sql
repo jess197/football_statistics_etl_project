@@ -6,8 +6,8 @@ with source_teams_odds_pre_match as (
       from RAW.TEAMS_ODDS_PRE_MATCH
 
 )
-select btv.value:value
-     , btv.value:odd
+select btv.value:value as odd_value
+     , btv.value:odd as odd
      , rf.value:fixture:id as fixture_id
      , rf.value:fixture:date as fixture_date 
      , rf.value:league:id as league_id
@@ -26,8 +26,8 @@ select btv.value:value
 
 UNION ALL
 
-select btv.value:value
-     , btv.value:odd
+select btv.value:value as odd_value
+     , btv.value:odd as odd 
      , rf.value:fixture:id as fixture_id
      , rf.value:fixture:date as fixture_date 
      , rf.value:league:id as league_id
