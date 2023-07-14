@@ -8,8 +8,8 @@ with staging_teams_fixtures_stat as (
          , ingestion_date
       from {{ ref('teams_fixtures_statistics') }}
 )
-SELECT
-       tfs.team_id::int as team_id
+SELECT {{ dbt_utils.generate_surrogate_key(['tfs.fixture_id','tfs.ingestion_date']) }} as fixt_stat_id
+     , tfs.team_id::int as team_id
      , tfs.fixture_id::int as fixture_id
      , MAX(CASE WHEN tfs.statistic_type::VARCHAR(20) = 'Shots on Goal' THEN tfs.statistic_value::VARCHAR(20) ELSE NULL END) AS shots_on_goal
      , MAX(CASE WHEN tfs.statistic_type::VARCHAR(20) = 'Shots off Goal' THEN tfs.statistic_value::VARCHAR(20) ELSE NULL END) AS shots_off_goal
