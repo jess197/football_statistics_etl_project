@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-with teams_brazil as (
+with staging_teams_brazil as (
     SELECT 
           team_id
         , venue_id
@@ -24,4 +24,4 @@ SELECT venue_id::numeric as venue_id
      , venue_surface::STRING as venue_surface
      , venue_image::STRING as venue_image
      , TO_TIMESTAMP(ingestion_date::STRING,'YYYY/MM/DD HH24:MI:SS') as ingestion_date
- FROM teams_brazil
+ FROM staging_teams_brazil
