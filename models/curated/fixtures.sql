@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-with teams_fixtures as (
+with staging_teams_fixtures as (
 
     SELECT 
           fixture_id
@@ -40,4 +40,4 @@ select
          ,tf.team_goals_home::INT as team_goals_home
          ,tf.team_goals_away::INT as team_goals_away
          ,TO_TIMESTAMP(tf.ingestion_date::STRING,'YYYY/MM/DD HH24:MI:SS') as ingestion_date
-from teams_fixtures tf 
+from staging_teams_fixtures tf 

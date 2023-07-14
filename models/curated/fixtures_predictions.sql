@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-with teams_fixtures_predictions as (
+with staging_teams_fixt_pred as (
 
     SELECT 
           fixture_id
@@ -32,4 +32,4 @@ select
      ,tp.pred_win_or_draw::BOOLEAN as pred_win_or_draw
      ,tp.pred_under_over::VARCHAR(10) as pred_under_over
      ,TO_TIMESTAMP(tp.ingestion_date::STRING,'YYYY/MM/DD HH24:MI:SS') as ingestion_date
-from teams_fixtures_predictions tp 
+from staging_teams_fixt_pred tp 

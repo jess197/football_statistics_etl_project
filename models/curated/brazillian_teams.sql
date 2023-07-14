@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-with teams_brazil as (
+with staging_teams_brazil as (
 
     SELECT team_id
         , team_code
@@ -19,4 +19,4 @@ select
      , tb.team_founded::int as team_founded
      , tb.team_logo::STRING as team_logo
      , TO_TIMESTAMP(ingestion_date::STRING,'YYYY/MM/DD HH24:MI:SS') as ingestion_date
-from teams_brazil tb 
+from staging_teams_brazil tb 
