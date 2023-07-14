@@ -1,4 +1,4 @@
-  {{ config(materialized='table') }}
+{{ config(materialized='table') }}
 
 with staging_standings as (
     SELECT league_id
