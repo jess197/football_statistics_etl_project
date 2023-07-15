@@ -2,8 +2,7 @@
 
 with staging_teams_fixt_pred as (
 
-    SELECT 
-          fixture_id
+    SELECT fixture_id
          ,pred_winner_id
          ,pred_winner_name
          ,pred_comment
@@ -18,8 +17,8 @@ with staging_teams_fixt_pred as (
          ,ingestion_date
      FROM {{ ref('teams_fixtures_predictions') }}
 )
-select   
-      tp.fixture_id::int as fixture_id
+select {{ dbt_utils.generate_surrogate_key(['tp.fixture_id','tp.ingestion_date']) }} as fixt_pred_id
+     ,tp.fixture_id::int as fixture_id
      ,tp.pred_winner_id::int as pred_winner_id
      ,tp.pred_winner_name::VARCHAR(30) as pred_winner_name
      ,tp.pred_comment::VARCHAR(100) as pred_comment

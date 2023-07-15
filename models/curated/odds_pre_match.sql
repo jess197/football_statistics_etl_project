@@ -10,7 +10,8 @@ with staging_teams_odds_pm as (
          , ingestion_date
       from {{ ref('teams_odds_pre_match') }}
 )
-SELECT op.fixture_id::int as fixture_id
+SELECT {{ dbt_utils.generate_surrogate_key(['op.fixture_id','op.ingestion_date']) }} as odd_pm_id
+     , op.fixture_id::int as fixture_id
      , op.bookmakers_id::int as bookmakers_id
      , op.bet_id::int as bet_id 
      , MAX(CASE WHEN op.odd_value::VARCHAR(20) = 'Home' THEN op.odd::VARCHAR(20) ELSE NULL END) AS odd_value_home

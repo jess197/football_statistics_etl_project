@@ -1,455 +1,450 @@
-
 version: 2
 
 models:
-    - name: teams_brazil
-      description: "A staging model to convert JSON data from Brazilian teams into a format that is more suitable for the curated layer"
-      columns:
-          - name: team_id
-            description: "The ID of the team"
-            tests:
-                - unique
-                - not_null
-          - name: ingestion_date
-            description: "Date that the file was ingested to snowflake from aws s3"
-          - name: team_code
-            description: The code of the team
-          - name: team_name
-            description: The name of the team
-          - name: team_country
-            description: The country of the team
-          - name: team_founded
-            description: The year the team was founded
-          - name: team_logo
-            description: The URL of the team logo
-          - name: venue_id
-            description: The ID of the venue
-          - name: venue_name
-            description: The name of the stadium 
-          - name: venue_address
-            description: The address of the stadium 
-          - name: venue_city
-            description: The city where the stadium is located
-          - name: venue_capacity
-            description: The seating capacity of the stadium 
-          - name: venue_surface
-            description: The surface type of the venue
-          - name: venue_image
-            description: The URL of the venue image
+  - name: teams_brazil
+    description: "A staging model to convert JSON data from Brazilian teams into a format that is more suitable for the curated layer"
+    columns:
+      - name: team_id
+        description: "The ID of the team"
+        tests:
+          - unique
+          - not_null
+      - name: ingestion_date
+        description: "Date that the file was ingested to snowflake from aws s3"
+      - name: team_code
+        description: The code of the team
+      - name: team_name
+        description: The name of the team
+      - name: team_country
+        description: The country of the team
+      - name: team_founded
+        description: The year the team was founded
+      - name: team_logo
+        description: The URL of the team logo
+      - name: venue_id
+        description: The ID of the venue
+      - name: venue_name
+        description: The name of the stadium
+      - name: venue_address
+        description: The address of the stadium
+      - name: venue_city
+        description: The city where the stadium is located
+      - name: venue_capacity
+        description: The seating capacity of the stadium
+      - name: venue_surface
+        description: The surface type of the venue
+      - name: venue_image
+        description: The URL of the venue image
 
-    - name: teams_fixtures
-      description: "A staging model to convert JSON data from Brazilian team fixtures into a format that is more suitable for the curated layer"
-      columns:
-          - name: fixture_id
-            description: "The ID of the fixture"
-            tests:
-              - unique
-              - not_null
-          - name: fixture_date
-            description: "The date that happened the fixture/match"
-          - name: fixture_referee
-            description: "The referee of the fixture/match"
-          - name: fixture_venue_id
-            description: "The ID of the stadium that happened the fixture"
-          - name: fixture_status_long
-            description: "Describe a long match status: Postponed/Match Finished"
-          - name: fixture_status_short
-            description: "Describe a short match status: PTB/FT"
-          - name: fixture_status_elapsed
-            description: "How much time it was spent in this specific match"
-          - name: league_id
-            description: "The ID of the league"
-          - name: league_season
-            description: "The season/year that happened the fixture in the league/championship"
-          - name: league_round
-            description: "The round that happened the fixture in the league/championship"
-          - name: team_home_id
-            description: "The ID of the home team"
-          - name: team_away_id
-            description: "The ID of the away team"
-          - name: team_home_winner
-            description: "Was the home team the fixture/match winner?"
-          - name: team_away_winner
-            description: "Was the away team the fixture/match winner?"
-          - name: team_goals_home
-            description: "The number of goals scored by the home team"
-          - name: team_goals_away
-            description: "The number of goals scored by the away team"
-          - name: ingestion_date
-            description: "Date that the file was ingested to Snowflake from AWS S3"
+  - name: teams_fixtures
+    description: "A staging model to convert JSON data from Brazilian team fixtures into a format that is more suitable for the curated layer"
+    columns:
+      - name: fixture_id
+        description: "The ID of the fixture"
+        tests:
+          - unique
+          - not_null
+      - name: fixture_date
+        description: "The date that happened the fixture/match"
+      - name: fixture_referee
+        description: "The referee of the fixture/match"
+      - name: fixture_venue_id
+        description: "The ID of the stadium that happened the fixture"
+      - name: fixture_status_long
+        description: "Describe a long match status: Postponed/Match Finished"
+      - name: fixture_status_short
+        description: "Describe a short match status: PTB/FT"
+      - name: fixture_status_elapsed
+        description: "How much time it was spent in this specific match"
+      - name: league_id
+        description: "The ID of the league"
+      - name: league_season
+        description: "The season/year that happened the fixture in the league/championship"
+      - name: league_round
+        description: "The round that happened the fixture in the league/championship"
+      - name: team_home_id
+        description: "The ID of the home team"
+      - name: team_away_id
+        description: "The ID of the away team"
+      - name: team_home_winner
+        description: "Was the home team the fixture/match winner?"
+      - name: team_away_winner
+        description: "Was the away team the fixture/match winner?"
+      - name: team_goals_home
+        description: "The number of goals scored by the home team"
+      - name: team_goals_away
+        description: "The number of goals scored by the away team"
+      - name: ingestion_date
+        description: "Date that the file was ingested to Snowflake from AWS S3"
 
-    - name: teams_fixtures_statistics
-      description: "A staging model to convert JSON data from Brazilian team fixtures statistics into a format that is more suitable for the curated layer"
-      columns:
-          - name: fixture_id
-            description: "The ID of the fixture"
-          - name: team_id
-            description: "The ID of the team"
-          - name: team_name
-            description: "The name of the team"
-          - name: statistic_type
-            description: "The type of statistic"
-          - name: statistic_value
-            description: "The value of the statistic"
-          - name: ingestion_date
-            description: "Date that the file was ingested to Snowflake from AWS S3"
-    
-    - name: teams_odds_pre_match
-      description: "A staging model to convert JSON data from pre-match odds for Brazilian teams fixtures into a format that is more suitable for the curated layer"
-      columns:
-          - name: value
-            description: "The value of the odds"
-          - name: odd
-            description: "The type of odd: Home/Draw/Away"
-          - name: fixture_id
-            description: "The ID of the fixture"
-          - name: fixture_date
-            description: "The date of the fixture"
-          - name: league_id
-            description: "The ID of the league"
-          - name: league_season
-            description: "The season of the league"
-          - name: bookmakers_id
-            description: "The ID of the bookmaker"
-          - name: bookmakers_name
-            description: "The name of the bookmaker"
-          - name: bet_name
-            description: "The name of the bet: Match Winner"
-          - name: bet_id
-            description: "The ID of the bet"
-          - name: file_last_update
-            description: "The last update of this file"
-          - name: ingestion_date
-            description: "Date that the file was ingested to Snowflake from AWS S3"
+  - name: teams_fixtures_statistics
+    description: "A staging model to convert JSON data from Brazilian team fixtures statistics into a format that is more suitable for the curated layer"
+    columns:
+      - name: fixture_id
+        description: "The ID of the fixture"
+      - name: team_id
+        description: "The ID of the team"
+      - name: team_name
+        description: "The name of the team"
+      - name: statistic_type
+        description: "The type of statistic"
+      - name: statistic_value
+        description: "The value of the statistic"
+      - name: ingestion_date
+        description: "Date that the file was ingested to Snowflake from AWS S3"
 
-    - name: teams_predictions
-      description: "A staging model to convert JSON data from fixtures predictions for Brazilian teams into a format that is more suitable for the curated layer"
-      columns:
-          - name: fixture_id
-            description: "The ID of the fixture"
-          - name: pred_winner_id
-            description: "The ID of the predicted winner"
-          - name: pred_winner_name
-            description: "The name of the predicted winner"
-          - name: pred_comment
-            description: "Comment on the prediction ex. Win, draw or loss"
-          - name: pred_advice
-            description: "Advice related to the prediction ex. Double chance : draw or Internacional"
-          - name: pred_goals_away
-            description: "The predicted number of goals for the away team"
-          - name: pred_goals_home
-            description: "The predicted number of goals for the home team"
-          - name: pred_percent_home
-            description: "The predicted percentage chance of the home team winning"
-          - name: pred_percent_away
-            description: "The predicted percentage chance of the away team winning"
-          - name: pred_percent_draw
-            description: "The predicted percentage chance of a draw"
-          - name: pred_win_or_draw
-            description: "Indicates whether the predicted outcome is a win or draw"
-          - name: pred_under_over
-            description: "Indicates whether the predicted outcome is under or over"
-          - name: ingestion_date
-            description: "Date that the file was ingested to Snowflake from AWS S3"
+  - name: teams_odds_pre_match
+    description: "A staging model to convert JSON data from pre-match odds for Brazilian teams fixtures into a format that is more suitable for the curated layer"
+    columns:
+      - name: value
+        description: "The value of the odds"
+      - name: odd
+        description: "The type of odd: Home/Draw/Away"
+      - name: fixture_id
+        description: "The ID of the fixture"
+      - name: fixture_date
+        description: "The date of the fixture"
+      - name: league_id
+        description: "The ID of the league"
+      - name: league_season
+        description: "The season of the league"
+      - name: bookmakers_id
+        description: "The ID of the bookmaker"
+      - name: bookmakers_name
+        description: "The name of the bookmaker"
+      - name: bet_name
+        description: "The name of the bet: Match Winner"
+      - name: bet_id
+        description: "The ID of the bet"
+      - name: file_last_update
+        description: "The last update of this file"
+      - name: ingestion_date
+        description: "Date that the file was ingested to Snowflake from AWS S3"
 
-    - name: teams_standings
-      description: "A staging model to convert JSON data from standings for Brazilian teams into a format that is more suitable for the curated layer"
-      columns:
-          - name: league_id
-            description: "The ID of the league"
-          - name: league_country
-            description: "The country of the league"
-          - name: league_country_flag
-            description: "The flag of the league country"
-          - name: league_logo
-            description: "The logo of the league"
-          - name: league_name
-            description: "The name of the league"
-          - name: league_season
-            description: "The season of the league"
-          - name: rank
-            description: "The rank of the team in the standings"
-          - name: team_id
-            description: "The ID of the team"
-          - name: team_name
-            description: "The name of the team"
-          - name: team_points
-            description: "The points of the team"
-          - name: team_goals_diff
-            description: "The goal difference between the team and others"
-          - name: serie
-            description: "The group/serie of the team"
-          - name: team_form
-            description: "The last 5 matches of the team"
-          - name: status
-            description: "The status of the team. ex. Up/Same/Down"
-          - name: description
-            description: "Which championship/league that will classicate for next season ex. Libertadores/Sulamericana/None"
-          - name: matches_played
-            description: "The number of matches played by the team"
-          - name: matches_win
-            description: "The number of matches won by the team"
-          - name: matches_loss
-            description: "The number of matches lost by the team"
-          - name: matches_draw
-            description: "The number of matches drawn by the team"
-          - name: goals_for
-            description: "The number of goals scored by the team"
-          - name: goals_against
-            description: "The number of goals conceded by the team"
-          - name: matches_played_home
-            description: "The number of matches played at home by the team"
-          - name: matches_win_home
-            description: "The number of matches won at home by the team"
-          - name: matches_loss_home
-            description: "The number of matches lost at home by the team"
-          - name: matches_draw_home
-            description: "The number of matches drawn at home by the team"
-          - name: goals_for_home
-            description: "The number of goals scored at home by the team"
-          - name: goals_against_home
-            description: "The number of goals conceded at home by the team"
-          - name: matches_played_away
-            description: "The number of matches played away by the team"
-          - name: matches_win_away
-            description: "The number of matches won away by the team"
-          - name: matches_loss_away
-            description: "The number of matches lost away by the team"
-          - name: matches_draw_away
-            description: "The number of matches drawn away by the team"
-          - name: goals_for_away
-            description: "The number of goals scored away by the team"
-          - name: goals_against_away
-            description: "The number of goals conceded away by the team"
-          - name: file_last_update
-            description: "The last update of the file"
-          - name: ingestion_date
-            description: "Date that the file was ingested to Snowflake from AWS S3"
+  - name: teams_fixtures_predictions
+    description: "A staging model to convert JSON data from fixtures predictions for Brazilian teams into a format that is more suitable for the curated layer"
+    columns:
+      - name: fixture_id
+        description: "The ID of the fixture"
+      - name: pred_winner_id
+        description: "The ID of the predicted winner"
+      - name: pred_winner_name
+        description: "The name of the predicted winner"
+      - name: pred_comment
+        description: "Comment on the prediction ex. Win, draw or loss"
+      - name: pred_advice
+        description: "Advice related to the prediction ex. Double chance : draw or Internacional"
+      - name: pred_goals_away
+        description: "The predicted number of goals for the away team"
+      - name: pred_goals_home
+        description: "The predicted number of goals for the home team"
+      - name: pred_percent_home
+        description: "The predicted percentage chance of the home team winning"
+      - name: pred_percent_away
+        description: "The predicted percentage chance of the away team winning"
+      - name: pred_percent_draw
+        description: "The predicted percentage chance of a draw"
+      - name: pred_win_or_draw
+        description: "Indicates whether the predicted outcome is a win or draw"
+      - name: pred_under_over
+        description: "Indicates whether the predicted outcome is under or over"
+      - name: ingestion_date
+        description: "Date that the file was ingested to Snowflake from AWS S3"
 
-    - name: source_teams_statistics
-      description: "A staging model to convert JSON data from team statistics into a format that is more suitable for the curated layer"
-      columns:
-          - name: league_id
-            description: "The ID of the league"
-          - name: league_name
-            description: "The name of the league"
-          - name: league_season
-            description: "The season of the league"
-          - name: league_logo
-            description: "The logo of the league"
-          - name: league_country_flag
-            description: "The flag of the league's country"
-          - name: league_country
-            description: "The country of the league"
-          - name: team_id
-            description: "The ID of the team"
-          - name: team_name
-            description: "The name of the team"
-          - name: statistic_form
-            description: "The last 5 matches results of the team"
-          - name: fixtures_played_home
-            description: "The number of fixtures played at home by the team"
-          - name: fixtures_played_away
-            description: "The number of fixtures played away by the team"
-          - name: fixtures_played_total
-            description: "The total number of fixtures played by the team"
-          - name: fixtures_wins_home
-            description: "The number of fixture wins at home by the team"
-          - name: fixtures_wins_away
-            description: "The number of fixture wins away by the team"
-          - name: fixtures_wins_total
-            description: "The total number of fixture wins by the team"
-          - name: fixtures_draws_home
-            description: "The number of fixture draws at home by the team"
-          - name: fixtures_draws_away
-            description: "The number of fixture draws away by the team"
-          - name: fixtures_draws_total
-            description: "The total number of fixture draws by the team"
-          - name: fixtures_loses_home
-            description: "The number of fixture losses at home by the team"
-          - name: fixtures_loses_away
-            description: "The number of fixture losses away by the team"
-          - name: fixtures_loses_total
-            description: "The total number of fixture losses by the team"
-          - name: biggest_goals_against_away
-            description: "The biggest number of goals conceded away by the team"
-          - name: biggest_goals_against_home
-            description: "The biggest number of goals conceded at home by the team"
-          - name: biggest_goals_for_away
-            description: "The biggest number of goals scored away by the team"
-          - name: biggest_goals_for_home
-            description: "The biggest number of goals scored at home by the team"
-          - name: biggest_loses_away
-            description: "The biggest number of losses away by the team"
-          - name: biggest_loses_home
-            description: "The biggest number of losses at home by the team"
-          - name: biggest_wins_away
-            description: "The biggest number of wins away by the team"
-          - name: biggest_wins_home
-            description: "The biggest number of wins at home by the team"
-          - name: biggest_streak_wins
-            description: "The biggest streak of wins by the team"
-          - name: biggest_streak_loses
-            description: "The biggest streak of losses by the team"
-          - name: biggest_streak_draws
-            description: "The biggest streak of draws by the team"
-          - name: goals_for_total_home
-            description: "The total number of goals scored at home by the team"
-          - name: goals_for_total_away
-            description: "The total number of goals scored away by the team"
-          - name: goals_for_total_total
-            description: "The total number of goals scored by the team"
-          - name: goals_for_average_home
-            description: "The average number of goals scored at home by the team"
-          - name: goals_for_average_away
-            description: "The average number of goals scored away by the team"
-          - name: goals_for_average_total
-            description: "The average number of goals scored by the team"
-          - name: goals_for_fifteen_min
-            description: "The number of goals scored by the team in the 0-15 minute interval"
-          - name: goals_for_thirty_min
-            description: "The number of goals scored by the team in the 16-30 minute interval"
-          - name: goals_for_forty_five_min
-            description: "The number of goals scored by the team in the 31-45 minute interval"
-          - name: goals_for_sixty_min
-            description: "The number of goals scored by the team in the 46-60 minute interval"
-          - name: goals_for_seventy_five_min
-            description: "The number of goals scored by the team in the 61-75 minute interval"
-          - name: goals_for_ninety_min
-            description: "The number of goals scored by the team in the 76-90 minute interval"
-          - name: goals_for_hundred_five_min
-            description: "The number of goals scored by the team in the 91-105 minute interval"
-          - name: goals_for_hundred_twenty_min
-            description: "The number of goals scored by the team in the 106-120 minute interval"
-          - name: goals_for_fifteen_min_percentage
-            description: "The percentage of goals scored by the team in the 0-15 minute interval"
-          - name: goals_for_thirty_min_percentage
-            description: "The percentage of goals scored by the team in the 16-30 minute interval"
-          - name: goals_for_forty_five_min_percentage
-            description: "The percentage of goals scored by the team in the 31-45 minute interval"
-          - name: goals_for_sixty_min_percentage
-            description: "The percentage of goals scored by the team in the 46-60 minute interval"
-          - name: goals_for_seventy_five_min_percentage
-            description: "The percentage of goals scored by the team in the 61-75 minute interval"
-          - name: goals_for_ninety_min_percentage
-            description: "The percentage of goals scored by the team in the 76-90 minute interval"
-          - name: goals_for_hundred_five_min_percentage
-            description: "The percentage of goals scored by the team in the 91-105 minute interval"
-          - name: goals_for_hundred_twenty_min_percentage
-            description: "The percentage of goals scored by the team in the 106-120 minute interval"
-          - name: goals_against_total_home
-            description: "The total number of goals conceded at home by the team"
-          - name: goals_against_total_away
-            description: "The total number of goals conceded away by the team"
-          - name: goals_against_total
-            description: "The total number of goals conceded by the team"
-          - name: goals_against_average_home
-            description: "The average number of goals conceded at home by the team"
-          - name: goals_against_average_away
-            description: "The average number of goals conceded away by the team"
-          - name: goals_against_average_total
-            description: "The average number of goals conceded by the team"
-          - name: goals_against_fifteen_min
-            description: "The number of goals conceded by the team in the 0-15 minute interval"
-          - name: goals_against_thirty_min
-            description: "The number of goals conceded by the team in the 16-30 minute interval"
-          - name: goals_against_forty_five_min
-            description: "The number of goals conceded by the team in the 31-45 minute interval"
-          - name: goals_against_sixty_min
-            description: "The number of goals conceded by the team in the 46-60 minute interval"
-          - name: goals_against_seventy_five_min
-            description: "The number of goals conceded by the team in the 61-75 minute interval"
-          - name: goals_against_ninety_min
-            description: "The number of goals conceded by the team in the 76-90 minute interval"
-          - name: goals_against_hundred_five_min
-            description: "The number of goals conceded by the team in the 91-105 minute interval"
-          - name: goals_against_hundred_twenty_min
-            description: "The number of goals conceded by the team in the 106-120 minute interval"
-          - name: goals_against_fifteen_min_percentage
-            description: "The percentage of goals conceded by the team in the 0-15 minute interval"
-          - name: goals_against_thirty_min_percentage
-            description: "The percentage of goals conceded by the team in the 16-30 minute interval"
-          - name: goals_against_forty_five_min_percentage
-            description: "The percentage of goals conceded by the team in the 31-45 minute interval"
-          - name: goals_against_sixty_min_percentage
-            description: "The percentage of goals conceded by the team in the 46-60 minute interval"
-          - name: goals_against_seventy_five_min_percentage
-            description: "The percentage of goals conceded by the team in the 61-75 minute interval"
-          - name: goals_against_ninety_min_percentage
-            description: "The percentage of goals conceded by the team in the 76-90 minute interval"
-          - name: goals_against_hundred_five_min_percentage
-            description: "The percentage of goals conceded by the team in the 91-105 minute interval"
-          - name: goals_against_hundred_twenty_min_percentage
-            description: "The percentage of goals conceded by the team in the 106-120 minute interval"
-          - name: clean_sheet_home
-            description: "The number of clean sheets at home by the team"
-          - name: clean_sheet_away
-            description: "The number of clean sheets away by the team"
-          - name: clean_sheet_total
-            description: "The total number of clean sheets by the team"
-          - name: failed_to_score_home
-            description: "The number of times the team failed to score at home"
-          - name: failed_to_score_away
-            description: "The number of times the team failed to score away"
-          - name: failed_to_score_total
-            description: "The total number of times the team failed to score"
-          - name: penalty_scored_total
-            description: "The total number of penalties scored by the team"
-          - name: penalty_scored_percentage
-            description: "The percentage of penalties scored by the team"
-          - name: penalty_missed_total
-            description: "The total number of penalties missed by the team"
-          - name: penalty_missed_percentage
-            description: "The percentage of penalties missed by the team"
-          - name: penalty_total
-            description: "The total number of penalties for the team"
-          - name: yellow_cards_fifteen_min
-            description: "The number of yellow cards received by the team in the 0-15 minute interval"
-          - name: yellow_cards_thirty_min
-            description: "The number of yellow cards received by the team in the 16-30 minute interval"
-          - name: yellow_cards_forty_five_min
-            description: "The number of yellow cards received by the team in the 31-45 minute interval"
-          - name: yellow_cards_sixty_min
-            description: "The number of yellow cards received by the team in the 46-60 minute interval"
-          - name: yellow_cards_seventy_five_min
-            description: "The number of yellow cards received by the team in the 61-75 minute interval"
-          - name: yellow_cards_ninety_min
-            description: "The number of yellow cards received by the team in the 76-90 minute interval"
-          - name: yellow_cards_hundred_five_min
-            description: "The number of yellow cards received by the team in the 91-105 minute interval"
-          - name: yellow_cards_hundred_twenty_min
-            description: "The number of yellow cards received by the team in the 106-120 minute interval"
-          - name: yellow_cards_fifteen_min_percentage
-            description: "The percentage of yellow cards received by the team in the 0-15 minute interval"
-          - name: yellow_cards_thirty_min_percentage
-            description: "The percentage of yellow cards received by the team in the 16-30 minute interval"
-          - name: yellow_cards_forty_five_min_percentage
-            description: "The percentage of yellow cards received by the team in the 31-45 minute interval"
-          - name: yellow_cards_sixty_min_percentage
-            description: "The percentage of yellow cards received by the team in the 46-60 minute interval"
-          - name: yellow_cards_seventy_five_min_percentage
-            description: "The percentage of yellow cards received by the team in the 61-75 minute interval"
-          - name: yellow_cards_ninety_min_percentage
-            description: "The percentage of yellow cards received by the team in the 76-90 minute interval"
-          - name: yellow_cards_hundred_five_min_percentage
-            description: "The percentage of yellow cards received by the team in the 91-105 minute interval"
-          - name: yellow_cards_hundred_twenty_min_percentage
-            description: "The percentage of yellow cards received by the team in the 106-120 minute interval"
-          - name: top_1_lineup
-            description: "The top lineup formation for the team"
-          - name: times_played_lineup_1
-            description: "The number of times the top lineup was played by the team"
-          - name: top_2_lineup
-            description: "The second top lineup formation for the team"
-          - name: times_played_lineup_2
-            description: "The number of times the second top lineup was played by the team"
-          - name: top_3_lineup
-            description: "The third top lineup formation for the team"
-          - name: times_played_lineup_3
-            description: "The number of times the third top lineup was played by the team"
-          - name: ingestion_date
-            description: "Date that the file was ingested to Snowflake from AWS S3"
+  - name: teams_standings
+    description: "A staging model to convert JSON data from standings for Brazilian teams into a format that is more suitable for the curated layer"
+    columns:
+      - name: league_id
+        description: "The ID of the league"
+      - name: league_country
+        description: "The country of the league"
+      - name: league_country_flag
+        description: "The flag of the league country"
+      - name: league_logo
+        description: "The logo of the league"
+      - name: league_name
+        description: "The name of the league"
+      - name: league_season
+        description: "The season of the league"
+      - name: rank
+        description: "The rank of the team in the standings"
+      - name: team_id
+        description: "The ID of the team"
+      - name: team_name
+        description: "The name of the team"
+      - name: team_points
+        description: "The points of the team"
+      - name: team_goals_diff
+        description: "The goal difference between the team and others"
+      - name: serie
+        description: "The group/serie of the team"
+      - name: team_form
+        description: "The last 5 matches of the team"
+      - name: status
+        description: "The status of the team. ex. Up/Same/Down"
+      - name: description
+        description: "Which championship/league that will classicate for next season ex. Libertadores/Sulamericana/None"
+      - name: matches_played
+        description: "The number of matches played by the team"
+      - name: matches_win
+        description: "The number of matches won by the team"
+      - name: matches_loss
+        description: "The number of matches lost by the team"
+      - name: matches_draw
+        description: "The number of matches drawn by the team"
+      - name: goals_for
+        description: "The number of goals scored by the team"
+      - name: goals_against
+        description: "The number of goals conceded by the team"
+      - name: matches_played_home
+        description: "The number of matches played at home by the team"
+      - name: matches_win_home
+        description: "The number of matches won at home by the team"
+      - name: matches_loss_home
+        description: "The number of matches lost at home by the team"
+      - name: matches_draw_home
+        description: "The number of matches drawn at home by the team"
+      - name: goals_for_home
+        description: "The number of goals scored at home by the team"
+      - name: goals_against_home
+        description: "The number of goals conceded at home by the team"
+      - name: matches_played_away
+        description: "The number of matches played away by the team"
+      - name: matches_win_away
+        description: "The number of matches won away by the team"
+      - name: matches_loss_away
+        description: "The number of matches lost away by the team"
+      - name: matches_draw_away
+        description: "The number of matches drawn away by the team"
+      - name: goals_for_away
+        description: "The number of goals scored away by the team"
+      - name: goals_against_away
+        description: "The number of goals conceded away by the team"
+      - name: file_last_update
+        description: "The last update of the file"
+      - name: ingestion_date
+        description: "Date that the file was ingested to Snowflake from AWS S3"
 
-
-
-              
+  - name: teams_statistics
+    description: "A staging model to convert JSON data from team statistics into a format that is more suitable for the curated layer"
+    columns:
+      - name: league_id
+        description: "The ID of the league"
+      - name: league_name
+        description: "The name of the league"
+      - name: league_season
+        description: "The season of the league"
+      - name: league_logo
+        description: "The logo of the league"
+      - name: league_country_flag
+        description: "The flag of the league's country"
+      - name: league_country
+        description: "The country of the league"
+      - name: team_id
+        description: "The ID of the team"
+      - name: team_name
+        description: "The name of the team"
+      - name: statistic_form
+        description: "The last 5 matches results of the team"
+      - name: fixtures_played_home
+        description: "The number of fixtures played at home by the team"
+      - name: fixtures_played_away
+        description: "The number of fixtures played away by the team"
+      - name: fixtures_played_total
+        description: "The total number of fixtures played by the team"
+      - name: fixtures_wins_home
+        description: "The number of fixture wins at home by the team"
+      - name: fixtures_wins_away
+        description: "The number of fixture wins away by the team"
+      - name: fixtures_wins_total
+        description: "The total number of fixture wins by the team"
+      - name: fixtures_draws_home
+        description: "The number of fixture draws at home by the team"
+      - name: fixtures_draws_away
+        description: "The number of fixture draws away by the team"
+      - name: fixtures_draws_total
+        description: "The total number of fixture draws by the team"
+      - name: fixtures_loses_home
+        description: "The number of fixture losses at home by the team"
+      - name: fixtures_loses_away
+        description: "The number of fixture losses away by the team"
+      - name: fixtures_loses_total
+        description: "The total number of fixture losses by the team"
+      - name: biggest_goals_against_away
+        description: "The biggest number of goals conceded away by the team"
+      - name: biggest_goals_against_home
+        description: "The biggest number of goals conceded at home by the team"
+      - name: biggest_goals_for_away
+        description: "The biggest number of goals scored away by the team"
+      - name: biggest_goals_for_home
+        description: "The biggest number of goals scored at home by the team"
+      - name: biggest_loses_away
+        description: "The biggest number of losses away by the team"
+      - name: biggest_loses_home
+        description: "The biggest number of losses at home by the team"
+      - name: biggest_wins_away
+        description: "The biggest number of wins away by the team"
+      - name: biggest_wins_home
+        description: "The biggest number of wins at home by the team"
+      - name: biggest_streak_wins
+        description: "The biggest streak of wins by the team"
+      - name: biggest_streak_loses
+        description: "The biggest streak of losses by the team"
+      - name: biggest_streak_draws
+        description: "The biggest streak of draws by the team"
+      - name: goals_for_total_home
+        description: "The total number of goals scored at home by the team"
+      - name: goals_for_total_away
+        description: "The total number of goals scored away by the team"
+      - name: goals_for_total_total
+        description: "The total number of goals scored by the team"
+      - name: goals_for_average_home
+        description: "The average number of goals scored at home by the team"
+      - name: goals_for_average_away
+        description: "The average number of goals scored away by the team"
+      - name: goals_for_average_total
+        description: "The average number of goals scored by the team"
+      - name: goals_for_fifteen_min
+        description: "The number of goals scored by the team in the 0-15 minute interval"
+      - name: goals_for_thirty_min
+        description: "The number of goals scored by the team in the 16-30 minute interval"
+      - name: goals_for_forty_five_min
+        description: "The number of goals scored by the team in the 31-45 minute interval"
+      - name: goals_for_sixty_min
+        description: "The number of goals scored by the team in the 46-60 minute interval"
+      - name: goals_for_seventy_five_min
+        description: "The number of goals scored by the team in the 61-75 minute interval"
+      - name: goals_for_ninety_min
+        description: "The number of goals scored by the team in the 76-90 minute interval"
+      - name: goals_for_hundred_five_min
+        description: "The number of goals scored by the team in the 91-105 minute interval"
+      - name: goals_for_hundred_twenty_min
+        description: "The number of goals scored by the team in the 106-120 minute interval"
+      - name: goals_for_fifteen_min_percentage
+        description: "The percentage of goals scored by the team in the 0-15 minute interval"
+      - name: goals_for_thirty_min_percentage
+        description: "The percentage of goals scored by the team in the 16-30 minute interval"
+      - name: goals_for_forty_five_min_percentage
+        description: "The percentage of goals scored by the team in the 31-45 minute interval"
+      - name: goals_for_sixty_min_percentage
+        description: "The percentage of goals scored by the team in the 46-60 minute interval"
+      - name: goals_for_seventy_five_min_percentage
+        description: "The percentage of goals scored by the team in the 61-75 minute interval"
+      - name: goals_for_ninety_min_percentage
+        description: "The percentage of goals scored by the team in the 76-90 minute interval"
+      - name: goals_for_hundred_five_min_percentage
+        description: "The percentage of goals scored by the team in the 91-105 minute interval"
+      - name: goals_for_hundred_twenty_min_percentage
+        description: "The percentage of goals scored by the team in the 106-120 minute interval"
+      - name: goals_against_total_home
+        description: "The total number of goals conceded at home by the team"
+      - name: goals_against_total_away
+        description: "The total number of goals conceded away by the team"
+      - name: goals_against_total
+        description: "The total number of goals conceded by the team"
+      - name: goals_against_average_home
+        description: "The average number of goals conceded at home by the team"
+      - name: goals_against_average_away
+        description: "The average number of goals conceded away by the team"
+      - name: goals_against_average_total
+        description: "The average number of goals conceded by the team"
+      - name: goals_against_fifteen_min
+        description: "The number of goals conceded by the team in the 0-15 minute interval"
+      - name: goals_against_thirty_min
+        description: "The number of goals conceded by the team in the 16-30 minute interval"
+      - name: goals_against_forty_five_min
+        description: "The number of goals conceded by the team in the 31-45 minute interval"
+      - name: goals_against_sixty_min
+        description: "The number of goals conceded by the team in the 46-60 minute interval"
+      - name: goals_against_seventy_five_min
+        description: "The number of goals conceded by the team in the 61-75 minute interval"
+      - name: goals_against_ninety_min
+        description: "The number of goals conceded by the team in the 76-90 minute interval"
+      - name: goals_against_hundred_five_min
+        description: "The number of goals conceded by the team in the 91-105 minute interval"
+      - name: goals_against_hundred_twenty_min
+        description: "The number of goals conceded by the team in the 106-120 minute interval"
+      - name: goals_against_fifteen_min_percentage
+        description: "The percentage of goals conceded by the team in the 0-15 minute interval"
+      - name: goals_against_thirty_min_percentage
+        description: "The percentage of goals conceded by the team in the 16-30 minute interval"
+      - name: goals_against_forty_five_min_percentage
+        description: "The percentage of goals conceded by the team in the 31-45 minute interval"
+      - name: goals_against_sixty_min_percentage
+        description: "The percentage of goals conceded by the team in the 46-60 minute interval"
+      - name: goals_against_seventy_five_min_percentage
+        description: "The percentage of goals conceded by the team in the 61-75 minute interval"
+      - name: goals_against_ninety_min_percentage
+        description: "The percentage of goals conceded by the team in the 76-90 minute interval"
+      - name: goals_against_hundred_five_min_percentage
+        description: "The percentage of goals conceded by the team in the 91-105 minute interval"
+      - name: goals_against_hundred_twenty_min_percentage
+        description: "The percentage of goals conceded by the team in the 106-120 minute interval"
+      - name: clean_sheet_home
+        description: "The number of clean sheets at home by the team"
+      - name: clean_sheet_away
+        description: "The number of clean sheets away by the team"
+      - name: clean_sheet_total
+        description: "The total number of clean sheets by the team"
+      - name: failed_to_score_home
+        description: "The number of times the team failed to score at home"
+      - name: failed_to_score_away
+        description: "The number of times the team failed to score away"
+      - name: failed_to_score_total
+        description: "The total number of times the team failed to score"
+      - name: penalty_scored_total
+        description: "The total number of penalties scored by the team"
+      - name: penalty_scored_percentage
+        description: "The percentage of penalties scored by the team"
+      - name: penalty_missed_total
+        description: "The total number of penalties missed by the team"
+      - name: penalty_missed_percentage
+        description: "The percentage of penalties missed by the team"
+      - name: penalty_total
+        description: "The total number of penalties for the team"
+      - name: yellow_cards_fifteen_min
+        description: "The number of yellow cards received by the team in the 0-15 minute interval"
+      - name: yellow_cards_thirty_min
+        description: "The number of yellow cards received by the team in the 16-30 minute interval"
+      - name: yellow_cards_forty_five_min
+        description: "The number of yellow cards received by the team in the 31-45 minute interval"
+      - name: yellow_cards_sixty_min
+        description: "The number of yellow cards received by the team in the 46-60 minute interval"
+      - name: yellow_cards_seventy_five_min
+        description: "The number of yellow cards received by the team in the 61-75 minute interval"
+      - name: yellow_cards_ninety_min
+        description: "The number of yellow cards received by the team in the 76-90 minute interval"
+      - name: yellow_cards_hundred_five_min
+        description: "The number of yellow cards received by the team in the 91-105 minute interval"
+      - name: yellow_cards_hundred_twenty_min
+        description: "The number of yellow cards received by the team in the 106-120 minute interval"
+      - name: yellow_cards_fifteen_min_percentage
+        description: "The percentage of yellow cards received by the team in the 0-15 minute interval"
+      - name: yellow_cards_thirty_min_percentage
+        description: "The percentage of yellow cards received by the team in the 16-30 minute interval"
+      - name: yellow_cards_forty_five_min_percentage
+        description: "The percentage of yellow cards received by the team in the 31-45 minute interval"
+      - name: yellow_cards_sixty_min_percentage
+        description: "The percentage of yellow cards received by the team in the 46-60 minute interval"
+      - name: yellow_cards_seventy_five_min_percentage
+        description: "The percentage of yellow cards received by the team in the 61-75 minute interval"
+      - name: yellow_cards_ninety_min_percentage
+        description: "The percentage of yellow cards received by the team in the 76-90 minute interval"
+      - name: yellow_cards_hundred_five_min_percentage
+        description: "The percentage of yellow cards received by the team in the 91-105 minute interval"
+      - name: yellow_cards_hundred_twenty_min_percentage
+        description: "The percentage of yellow cards received by the team in the 106-120 minute interval"
+      - name: top_1_lineup
+        description: "The top lineup formation for the team"
+      - name: times_played_lineup_1
+        description: "The number of times the top lineup was played by the team"
+      - name: top_2_lineup
+        description: "The second top lineup formation for the team"
+      - name: times_played_lineup_2
+        description: "The number of times the second top lineup was played by the team"
+      - name: top_3_lineup
+        description: "The third top lineup formation for the team"
+      - name: times_played_lineup_3
+        description: "The number of times the third top lineup was played by the team"
+      - name: ingestion_date
+        description: "Date that the file was ingested to Snowflake from AWS S3"

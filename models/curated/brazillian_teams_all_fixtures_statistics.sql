@@ -20,10 +20,10 @@ with staging_season_statistics_fixtures as (
       from {{ ref('teams_statistics') }}
 )
 
-SELECT ssf.team_id::int as team_id 
+SELECT {{ dbt_utils.generate_surrogate_key(['ssf.team_id','ssf.ingestion_date']) }} as season_statistics_fixt_id 
+     , ssf.team_id::int as team_id 
      , league_id::int as league_id
-     , ssf.league_season::VARCHAR(20) as league_season
-     , {{ dbt_utils.generate_surrogate_key(['ssf.team_id','ssf.ingestion_date']) }} as season_statistics_fixt_id  
+     , ssf.league_season::VARCHAR(20) as league_season 
      , ssf.fixtures_played_home::int as fixtures_played_home
      , ssf.fixtures_played_away::int as fixtures_played_away
      , ssf.fixtures_played_total::int as fixtures_played_total

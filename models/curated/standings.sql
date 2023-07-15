@@ -34,7 +34,8 @@ with staging_standings as (
       FROM {{ ref('teams_standings') }}
 )
 
-SELECT st.league_id::int as league_id
+SELECT {{ dbt_utils.generate_surrogate_key(['st.team_id','st.ingestion_date']) }} as standings_id
+     , st.league_id::int as league_id
      , st.league_season::int as season
      , st.rank::int as rank
      , st.team_id::int as team_id 

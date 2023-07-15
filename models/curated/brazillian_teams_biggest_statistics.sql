@@ -19,10 +19,10 @@ with staging_season_biggest_statistics as (
       from {{ ref('teams_statistics') }}
 )
 
-SELECT sbs.team_id::int as team_id 
+SELECT {{ dbt_utils.generate_surrogate_key(['sbs.team_id','sbs.ingestion_date']) }} as season_biggest_stat_id
+     , sbs.team_id::int as team_id 
      , league_id::int as league_id
-     , sbs.league_season::VARCHAR(20) as league_season
-     , {{ dbt_utils.generate_surrogate_key(['sbs.team_id','sbs.ingestion_date']) }} as season_biggest_stat_id  
+     , sbs.league_season::VARCHAR(20) as league_season  
      , sbs.biggest_goals_against_away::int as biggest_goals_against_away
      , sbs.biggest_goals_against_home::int as biggest_goals_against_home
      , sbs.biggest_goals_for_away::int as biggest_goals_for_away
