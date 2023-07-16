@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 WITH curated_fixtures_alltime_statistics AS (
   SELECT *
