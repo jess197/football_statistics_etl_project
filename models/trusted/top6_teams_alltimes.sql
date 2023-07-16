@@ -1,3 +1,4 @@
+{{ config(materialized='view') }}
 WITH curated_standings AS (
     SELECT season, rank, team_id
     FROM {{ ref('standings') }}
