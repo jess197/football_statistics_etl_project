@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 WITH head_to_head_alltimes AS (
     SELECT bt.team_id as team_id1
         , bt.team_name as team_name1
