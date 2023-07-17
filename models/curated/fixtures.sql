@@ -23,7 +23,7 @@ with staging_teams_fixtures as (
 )
 
    select distinct tf.fixture_id::INT as fixture_id
-         ,TO_CHAR(TO_TIMESTAMP_NTZ(tf.fixture_date::STRING), 'YYYY/MM/DD HH24:MI:SS')  AS fixture_date
+         ,TO_CHAR(TO_TIMESTAMP_NTZ(tf.fixture_date::STRING), 'YYYY/MM/DD')  AS fixture_date
          ,tf.fixture_referee::VARCHAR(100) as fixture_referee
          ,tf.fixture_venue_id::INT as fixture_venue_id
          ,tf.fixture_status_long::VARCHAR(25) as fixture_status_long
