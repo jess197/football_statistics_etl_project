@@ -54,7 +54,7 @@ brazil_teams AS (
         , hh.head_to_head_away_wins
         , hh.head_to_head_draws
         , hh.team_away_id
-        ,hh.team_home_id
+        , hh.team_home_id
         , SUM(hh.total_games) as total_games
     FROM head_to_head hh
     GROUP BY ALL 
