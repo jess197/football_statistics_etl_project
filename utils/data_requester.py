@@ -1,5 +1,5 @@
 
-from football_api import FootballAPI
+from .football_api import FootballAPI
 
 
 class DataRequester:
