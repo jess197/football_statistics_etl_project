@@ -1,8 +1,9 @@
-from data_uploader import DataUploader
-from data_requester import DataRequester
+from .data_uploader import DataUploader
+from .data_requester import DataRequester
 import json
 import re 
 from datetime import timedelta, datetime
+
 
 requester = DataRequester()
 uploader = DataUploader()
@@ -102,7 +103,7 @@ def process_fixtures_statistics():
     response = requester.request_league(71)
     for season in response['response'][0]['seasons']:
         year = season['year']
-        if int(year) >= 2018:
+        if int(year) >= 2023:
             response_standings = requester.request_standings(71, year)
             championship = response_standings['response'][0]['league']['name']
             championship = championship.lower().replace(' ', '_')
@@ -222,12 +223,4 @@ def process_fixtures_odds():
                     print(f'File already found: {file_name}')
                     continue
 
-# TODO CREATE DAGS IN AIRFLOW FOR EACH BATCH OR STREAMING PROCESS  
-process_teams()
-process_teams_statistics()
-process_standings()
-process_fixtures()
-process_fixtures_statistics()
-process_fixtures_predictions()
-process_fixtures_odds()
 
