@@ -103,7 +103,7 @@ def process_fixtures_statistics():
     response = requester.request_league(71)
     for season in response['response'][0]['seasons']:
         year = season['year']
-        if int(year) >= 2018:
+        if int(year) >= 2023:
             response_standings = requester.request_standings(71, year)
             championship = response_standings['response'][0]['league']['name']
             championship = championship.lower().replace(' ', '_')
