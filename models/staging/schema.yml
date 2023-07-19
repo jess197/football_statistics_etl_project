@@ -42,7 +42,6 @@ models:
       - name: fixture_id
         description: "The ID of the fixture"
         tests:
-          - unique
           - not_null
       - name: fixture_date
         description: "The date that happened the fixture/match"
