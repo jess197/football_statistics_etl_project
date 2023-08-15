@@ -9,7 +9,7 @@ apache-airflow-providers-ftp==3.4.2
 apache-airflow-providers-http==4.5.0
 apache-airflow-providers-imap==3.2.2
 apache-airflow-providers-sqlite==3.4.2
-apache-airflow-providers-dbt-cloud==2.2.0
+apache-airflow-providers-dbt-cloud==3.2.2
 apispec==5.2.2
 argcomplete==3.1.1
 asgiref==3.7.2
@@ -29,6 +29,7 @@ clickclick==20.10.2
 colorama==0.4.6
 colorlog==4.8.0
 ConfigUpdater==3.1.1
+confluent-kafka==2.2.0
 connexion==2.14.2
 cron-descriptor==1.4.0
 croniter==1.4.1
