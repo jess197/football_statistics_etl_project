@@ -22,15 +22,15 @@ JOB_ID = "383414"
 def run_dbt_teams_statistics():
     begin, end = [EmptyOperator(task_id=id) for id in ["begin", "end"]]
 
-    trigger_job = DbtCloudRunJobOperator(
-        task_id="trigger_dbt_cloud_job",
+    teams_statistics_task = DbtCloudRunJobOperator(
+        task_id="teams_statistics_task",
         dbt_cloud_conn_id=DBT_CLOUD_CONN_ID,
         job_id=JOB_ID,
         check_interval=600,
         timeout=3600,
     )
 
-    begin >> trigger_job >> end
+    begin >> teams_statistics_task >> end
 
 
 dag = run_dbt_teams_statistics()

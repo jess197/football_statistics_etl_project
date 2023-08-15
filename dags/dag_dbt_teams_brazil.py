@@ -1,3 +1,23 @@
+"""
+#### Getting Started
+
+This pipeline requires a connection to dbt Cloud as well as an Airflow Variable for the ``job_id`` to be
+triggered.
+
+To create a connection to dbt Cloud, navigate to `Admin -> Connections` in the Airflow UI and select the
+"dbt Cloud" connection type. An API token is required, however, the Account ID is not. You may provide an
+Account ID and this will be used by the dbt Cloud tasks, but you can also override or supply a specific
+Account ID at the task level using the `account_id` parameter if you wish.
+
+#### Provider Details
+For reference, the following provider version was used when intially authoring this pipeline:
+
+```
+    apache-airflow-providers-dbt-cloud==3.2.2
+```
+This provider version uses dbt Cloud API.
+"""
+
 from pendulum import datetime
 
 from airflow.decorators import dag
