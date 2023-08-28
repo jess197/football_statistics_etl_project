@@ -131,4 +131,4 @@ WTForms==3.0.1
 yarl==1.9.2
 zipp==3.16.2
 typer[all]>=0.6.1,<0.7.0
-
+snowflake-sqlalchemy==1.4.7
