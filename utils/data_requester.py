@@ -38,3 +38,8 @@ class DataRequester:
     def request_fixtures_odds_pre_match(self,fixture_id,bet_id,bookmaker_id):
         response = self.api.get(f'odds?fixture={fixture_id}&bet={bet_id}&bookmaker={bookmaker_id}')
         return response
+    
+    def request_fixtures_odds_in_match(self,fixture_id):
+        response = self.api.get(f'/odds/live?fixture={fixture_id}')
+        return response
+  

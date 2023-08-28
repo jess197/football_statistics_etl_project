@@ -2,7 +2,8 @@
 #######CONFIGURATIONS-API#######
 #######------------------######
 import os
-import requests
+import urllib3
+import json
 
 #in the dockerfile or in the venv configured API_KEY
 
@@ -18,5 +19,7 @@ class FootballAPI:
 
 
     def get(self, url):
-        response = requests.get(f'{self.base_api_url}{url}', headers=self.default_headers)
-        return response.json()
+        http = urllib3.PoolManager()
+        response = http.request('GET',f'{self.base_api_url}{url}', headers=self.default_headers)
+        http.clear()
+        return json.loads(response.data)
