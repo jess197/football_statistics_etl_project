@@ -78,16 +78,22 @@ def process_fixture_ongoing(fixture):
 
         date = get_date()
         ingestion_date = get_date_format_json(date=date)
-        fixt_odds = {
-            "fixture": fixture,
-            "response": response_odds['response'],
-            "ingestion_date": ingestion_date
-        }
-        json_data = json.dumps(fixt_odds)
 
-        p.poll(1)
-        p.produce('football-odds-in-match', json_data.encode('utf-8'), callback=receipt)
-        p.flush()
+        for response in response_odds['response']:
+            for odd in response['odds']:
+                odd_response = {
+                    'fixture': response['fixture'],
+                    'league': response['league'],
+                    'teams': response['teams'],
+                    'status': response['status'],
+                    'update': response['update'],
+                    'ingestion_date': ingestion_date,
+                    'odd': odd
+                } 
+
+                p.poll(1)
+                p.produce('football-odds-in-match', json.dumps(odd_response).encode('utf-8'),callback=receipt)
+                p.flush()
 
         time.sleep(60)
 
