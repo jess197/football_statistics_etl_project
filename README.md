@@ -7,7 +7,7 @@
   This data engineering project is a fascinating odyssey, bringing forth not just statistics but also insights that challenge the way we perceive Brazil's most beloved sport.
   I explored the API to extract precious data from Brasileirão, from 2018 to 2023, unveiling secrets hidden within the numbers.
  </p>
- <p> The choosen data stack was ith a modern approach, we adopted the most advanced technology stack: Snowflake, dbt, Kafka, Airflow, Redash, Python, Docker, and AWS.  </p>
+ <p> The choosen data stack was a modern approach, we adopted the most advanced technology stack: Snowflake, dbt, Kafka, Airflow, Redash, Python, Docker, and AWS. </p>
  <p>  I choosed to do this project because of my love about football, I enjoyed each single moment doing this about my favorite sport. Hope you enjoy it too :) </p>
 </p>
 
@@ -116,7 +116,7 @@ We follow the dance of odds during real-time games. A data stream that reflects 
 
 #### The battle against relegation in the 2023 season
 
-##### Santos x Fortaleza - 38 ROUND
+##### Santos x Fortaleza - 38th ROUND
 
 ![Santos X Fortaleza - 38 Round Full Time](img/santos_fortaleza.png)
 
@@ -125,13 +125,15 @@ We follow the dance of odds during real-time games. A data stream that reflects 
 ![Santos X Fortaleza - 38 Round After 96 of 2 half](img/odds_variation_san_for_ft.png)
 
 
-##### Vasco x Bragantino - 38 ROUND
+##### Vasco x Bragantino - 38th ROUND
 
 ![Vasco x Bragantino - 38 Round Full Time](img/vasco_bragantino.png)
 
 ![Vasco x Bragantino - 38 Round Until 80 of 2 half](img/odds_variation_vas_bgt_80_min.png)
 
 ![Vasco x Bragantino - 38 Round After 90 of 2 half](img/odds_variation_vas_bgt_ft.png)
+
+<b>  PS: Santos was relegated to Brasileirao Serie B 2024 </b> 
 
 ##### Chapter 3: Home and Away Performance Internacional:
 We discover the secrets of teams as hosts and visitors, revealing patterns that go beyond wins and losses. The stadium atmosphere, the pressure of the crowd—everything translates into numbers.
@@ -212,6 +214,11 @@ but we also can see that with worst results than that in 2020 with Flamengo and 
 <img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px">
 
 ![Leader per Round 2023 - Palmeiras 4 rounds](img/palmeiras.png)
+
+
+### TECH STACK 
+<img src="./docs/img/aws.png" alt="aws" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./docs/img/python.png" alt="python" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./docs/img/dbt.png" alt="dbt" style="vertical-align:top; margin:4px; height:40px; width:100px"><img src="./docs/img/docker.png" alt="docker" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./docs/img/snowflake.png" alt="snowflake" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./docs/img/redash.png" alt="redash" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./docs/img/kafka.png" alt="kafka" style="vertical-align:top; margin:4px; height:40px; width:40px">
+<img src="./docs/img/airflow.png" alt="airflow" style="vertical-align:top; margin:4px; height:40px; width:40px">
 
 
 
