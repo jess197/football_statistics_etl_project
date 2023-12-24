@@ -118,6 +118,13 @@ We follow the dance of odds during real-time games. A data stream that reflects 
 
 ##### Santos x Fortaleza - 38 ROUND
 
+![Santos X Fortaleza - 38 Round Until 90 of 2 half](img/odds_variation_san_for_90_min.png)
+
+
+![Santos X Fortaleza - 38 Round After 96 of 2 half](img/odds_variation_san_for_ft_png.png)
+
+
+
 
 
 
