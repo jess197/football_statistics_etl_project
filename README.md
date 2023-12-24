@@ -217,7 +217,7 @@ but we also can see that with worst results than that in 2020 with Flamengo and 
 
 
 ### TECH STACK 
-<img src="./img/docs/aws.png" alt="aws" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./img/docs/python.png" alt="python" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./img/docs/dbt.png" alt="dbt" style="vertical-align:top; margin:4px; height:40px; width:100px"><img src="./img/docs/docker.png" alt="docker" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./img/docs/snowflake.png" alt="snowflake" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./img/docs/redash.png" alt="redash" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./img/docs/kafka.png" alt="kafka" style="vertical-align:top; margin:4px; height:40px; width:40px">
+<img src="./img/docs/aws.png" alt="aws" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./img/docs/python.png" alt="python" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./img/docs/dbt.png" alt="dbt" style="vertical-align:top; margin:4px; height:40px; width:100px"><img src="./img/docs/docker.png" alt="docker" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./img/docs/snowflake.png" alt="snowflake" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./img/docs/redash.png" alt="redash" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="./img/docs/kafka_w.png" alt="kafka" style="vertical-align:top; margin:4px; height:40px; width:40px">
 <img src="./img/docs/airflow.png" alt="airflow" style="vertical-align:top; margin:4px; height:40px; width:40px">
 
 
