@@ -111,6 +111,16 @@ We deepen our gaze on yellow cards, unraveling the referees who distributed the 
 
 ![Yellow Cards Minute Per Season](img/yellow_cards_minute_per_season.png)
 
+Chapter 2: Odds Variation - The Pulse of the Game:
+We follow the dance of odds during real-time games. A data stream that reflects the emotion of the matches, revealing unexpected turnarounds and last-minute strategies.
+
+#### The battle against relegation in the 2023 season
+
+##### Santos x Fortaleza - 38 ROUND
+
+
+
+
 
 
 
