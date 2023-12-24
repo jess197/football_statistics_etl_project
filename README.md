@@ -111,7 +111,7 @@ We deepen our gaze on yellow cards, unraveling the referees who distributed the 
 
 ![Yellow Cards Minute Per Season](img/yellow_cards_minute_per_season.png)
 
-Chapter 2: Odds Variation - The Pulse of the Game:
+##### Chapter 2: Odds Variation - The Pulse of the Game:
 We follow the dance of odds during real-time games. A data stream that reflects the emotion of the matches, revealing unexpected turnarounds and last-minute strategies.
 
 #### The battle against relegation in the 2023 season
@@ -132,6 +132,53 @@ We follow the dance of odds during real-time games. A data stream that reflects 
 ![Vasco x Bragantino - 38 Round Until 80 of 2 half](img/odds_variation_vas_bgt_80_min.png)
 
 ![Vasco x Bragantino - 38 Round After 90 of 2 half](img/odds_variation_vas_bgt_ft.png)
+
+##### Chapter 3: Home and Away Performance Internacional:
+We discover the secrets of teams as hosts and visitors, revealing patterns that go beyond wins and losses. The stadium atmosphere, the pressure of the crowd—everything translates into numbers.
+
+![Host Internacional x Other Teams - Wins, Draws, Losses](img/host_inter.png)
+
+![Visitor Internacional x Other Teams - Wins, Draws, Losses](img/visitor_inter.png)
+
+
+##### Chapter 4: Home and Away Performance Palmeiras 2018,2022 and 2023 Championship Winner:
+<p> It's possible to analyse that Palmeiras who won the championship </p>
+  1. in 2018 from 38 rounds had 16 wins at home and 7 wins away as a visitor with total of 23 wins  
+     1.1 It had 3 loses away as a visitor and 1 at home with total of 4 loses
+  2. in 2022 from 38 rounds had 13 wins at home and 10 wins away as a visitor with total 23 wins 
+      2.1 It had 2 loses away as a visitor and 1 at home with total of 3 loses
+  3. in 2023 from 38 rounds had 14 wins at home and 6 wins away as a visitor with total 20 wins  
+     3.1 It had 5 loses away as a visitor and 3 at home with total of 8 loses 
+
+
+![Palmeiras Wins at Home and as Visitor per Season](img/palmeiras_better_results.png)
+
+![Palmeiras Loses at Home and as Visitor per Season](img/palmeiras_worst_results.png)
+
+    
+
+##### Chapter 5: Home and Away Performance Flamengo 2019,2020 Championship Winner:
+
+<p> It's possible to analyse that Flamengo who won the championship </p>
+  1. in 2019 from 38 rounds had 13 wins at home and 8 wins away as a visitor with total of 21 wins  
+     1.1 It had 4 loses away as a visitor and 0 at home with total of 4 loses
+  2. in 2020 from 38 rounds had 9 wins at home and 6 wins away as a visitor with total 14 wins 
+      2.1 It had 5 loses away as a visitor and 4 at home with total of 9 loses
+
+![Flamengo Wins at Home and as Visitor per Season](img/flamengo_better_results.png)
+
+![Flamengo Loses at Home and as Visitor per Season](img/flamengo_worst_results.png)
+
+
+We can understand with these results that you must have more than 20 wins and less than 5 loses during the championship to have a calm season with the trophy in the final,
+but we also can see that with worst results than that in 2020 with Flamengo and their 14 wins and 9 loses and in 2023 with Palmeiras and their 20 wins and 8 loses that counted with a little bit lucky on the final lap of the championship as you can see here: 
+
+![Leader per Round 2020 - Flamengo 2 rounds](img/flamengo.png)
+
+![Leader per Round 2023 - Palmeiras 4 rounds](img/palmeiras.png)
+
+
+
 
 
 
