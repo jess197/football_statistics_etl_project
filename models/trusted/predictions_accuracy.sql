@@ -31,8 +31,8 @@ SELECT f.league_season
      , bt.team_name||' X '||bt2.team_name as match
      , p.pred_winner_name
      , p.pred_comment
-     , CASE WHEN p.pred_winner_id = f.team_winner_id OR f.team_winner_id = bt.team_id THEN bt.team_name
-            WHEN p.pred_winner_id = f.team_winner_id OR f.team_winner_id = bt2.team_id THEN bt2.team_name
+     , CASE WHEN f.team_winner_id = bt.team_id THEN bt.team_name
+            WHEN f.team_winner_id = bt2.team_id THEN bt2.team_name
         ELSE 'Draw'
        END as winner_team 
      , CASE WHEN p.pred_winner_id = f.team_winner_id OR (f.team_winner_id = 0 AND p.pred_comment LIKE '%draw%') THEN 'Correct Prediction'
@@ -47,3 +47,4 @@ SELECT f.league_season
     ON f.team_away_id = bt2.team_id
     AND f.fixture_date <= to_CHAR(CURRENT_DATE,'YYYY/MM/DD')
   GROUP BY ALL 
+  
