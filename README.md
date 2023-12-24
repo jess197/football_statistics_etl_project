@@ -118,10 +118,20 @@ We follow the dance of odds during real-time games. A data stream that reflects 
 
 ##### Santos x Fortaleza - 38 ROUND
 
+![Santos X Fortaleza - 38 Round Full Time](img/santos_fortaleza.png)
+
 ![Santos X Fortaleza - 38 Round Until 90 of 2 half](img/odds_variation_san_for_90_min.png)
 
+![Santos X Fortaleza - 38 Round After 96 of 2 half](img/odds_variation_san_for_ft.png)
 
-![Santos X Fortaleza - 38 Round After 96 of 2 half](img/odds_variation_san_for_ft_png.png)
+
+##### Vasco x Bragantino - 38 ROUND
+
+![Vasco x Bragantino - 38 Round Full Time](img/vasco_bragantino.png)
+
+![Vasco x Bragantino - 38 Round Until 80 of 2 half](img/odds_variation_vas_bgt_80_min.png)
+
+![Vasco x Bragantino - 38 Round After 90 of 2 half](img/odds_variation_vas_bgt_ft.png)
 
 
 
