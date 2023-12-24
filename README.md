@@ -143,12 +143,31 @@ We discover the secrets of teams as hosts and visitors, revealing patterns that 
 
 ##### Chapter 4: Home and Away Performance Palmeiras 2018,2022 and 2023 Championship Winner:
 <p> It's possible to analyse that Palmeiras who won the championship </p>
-  1. in 2018 from 38 rounds had 16 wins at home and 7 wins away as a visitor with total of 23 wins  
-     1.1 It had 3 loses away as a visitor and 1 at home with total of 4 loses
-  2. in 2022 from 38 rounds had 13 wins at home and 10 wins away as a visitor with total 23 wins 
-      2.1 It had 2 loses away as a visitor and 1 at home with total of 3 loses
-  3. in 2023 from 38 rounds had 14 wins at home and 6 wins away as a visitor with total 20 wins  
-     3.1 It had 5 loses away as a visitor and 3 at home with total of 8 loses 
+
+ 1. 2018 Season:
+   - From 38 rounds, had 16 wins at home and 7 wins away as a visitor, with a total of 23 wins.
+   - Experienced 3 losses away as a visitor and 1 at home, resulting in a total of 4 losses.
+
+1.1 2018 Season Summary:
+   - Total Wins: 23
+   - Total Losses: 4
+
+2. 2022 Season:
+   - From 38 rounds, had 13 wins at home and 10 wins away as a visitor, with a total of 23 wins.
+   - Faced 2 losses away as a visitor and 1 at home, resulting in a total of 3 losses.
+
+2.1 2022 Season Summary:
+   - Total Wins: 23
+   - Total Losses: 3
+
+3. 2023 Season:
+   - From 38 rounds, had 14 wins at home and 6 wins away as a visitor, with a total of 20 wins.
+   - Encountered 5 losses away as a visitor and 3 at home, resulting in a total of 8 losses.
+
+3.1 2023 Season Summary:
+   - Total Wins: 20
+   - Total Losses: 8
+
 
 
 ![Palmeiras Wins at Home and as Visitor per Season](img/palmeiras_better_results.png)
@@ -160,20 +179,37 @@ We discover the secrets of teams as hosts and visitors, revealing patterns that 
 ##### Chapter 5: Home and Away Performance Flamengo 2019,2020 Championship Winner:
 
 <p> It's possible to analyse that Flamengo who won the championship </p>
-  1. in 2019 from 38 rounds had 13 wins at home and 8 wins away as a visitor with total of 21 wins  
-     1.1 It had 4 loses away as a visitor and 0 at home with total of 4 loses
-  2. in 2020 from 38 rounds had 9 wins at home and 6 wins away as a visitor with total 14 wins 
-      2.1 It had 5 loses away as a visitor and 4 at home with total of 9 loses
+
+1. <b> 2019 Season: </b>
+   - From 38 rounds, had 13 wins at home and 8 wins away as a visitor, with a total of 21 wins.
+   - Faced 4 losses away as a visitor and 0 at home, resulting in a total of 4 losses.
+
+  1.1 2019 Season Summary:
+     - Total Wins: 21
+     - Total Losses: 4
+
+2. <b> 2020 Season: </b>
+   - From 38 rounds, had 9 wins at home and 6 wins away as a visitor, with a total of 14 wins.
+   - Encountered 5 losses away as a visitor and 4 at home, resulting in a total of 9 losses.
+
+  2.1 2020 Season Summary:
+     - Total Wins: 14
+     - Total Losses: 9
+
 
 ![Flamengo Wins at Home and as Visitor per Season](img/flamengo_better_results.png)
 
 ![Flamengo Loses at Home and as Visitor per Season](img/flamengo_worst_results.png)
 
 
-We can understand with these results that you must have more than 20 wins and less than 5 loses during the championship to have a calm season with the trophy in the final,
+We can understand with these results that you must have something more than 20 wins and less than 5 loses during the championship to have a calm season with the trophy in the final,
 but we also can see that with worst results than that in 2020 with Flamengo and their 14 wins and 9 loses and in 2023 with Palmeiras and their 20 wins and 8 loses that counted with a little bit lucky on the final lap of the championship as you can see here: 
 
-![Leader per Round 2020 - Flamengo 2 rounds](img/flamengo.png)
+<img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px">
+
+![Leader per Round 2020 - Flamengo 2 rounds](img/flamengo.jpeg)
+
+<img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px">
 
 ![Leader per Round 2023 - Palmeiras 4 rounds](img/palmeiras.png)
 
