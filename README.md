@@ -106,6 +106,11 @@ dag_process_fixtures_odds_pre.py
 ##### Chapter 1: Yellow Cards - The Game Beyond the Field:
 We deepen our gaze on yellow cards, unraveling the referees who distributed the most warnings and the tactics of teams in tight situations. An analysis that goes beyond statistics, delving into the psychology of the game.
 
+![Top 7 Referees with Most Cards During 2023 Season](img/top7referees.png)
+
+
+![Yellow Cards Minute Per Season](img/yellow_cards_minute_per_season.png)
+
 
 
 
