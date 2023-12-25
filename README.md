@@ -7,7 +7,7 @@
   This data engineering project is a fascinating odyssey, bringing forth not just statistics but also insights that challenge the way we perceive Brazil's most beloved sport.
   I explored the API to extract precious data from Brasileirão, from 2018 to 2023, unveiling secrets hidden within the numbers.
  </p>
- <p> The choosen data stack was a modern approach, we adopted the most advanced technology stack: Snowflake, dbt, Kafka, Airflow, Redash, Python, Docker, and AWS. </p>
+ <p> The choosen data stack was a modern approach, I adopted some of the most advanced tech/data stack: Snowflake, dbt, Kafka, Airflow, Redash, Python, Docker, and AWS. </p>
  <p>  I choosed to do this project because of my love about football, I enjoyed each single moment doing this about my favorite sport. Hope you enjoy it too :) </p>
 </p>
 
