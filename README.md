@@ -238,6 +238,21 @@ We discover the secrets of teams as hosts and visitors, revealing patterns that 
 ![Flamengo Loses at Home and as Visitor per Season](img/flamengo_worst_results.png)
 
 
+##### Chapter 6: Home and Away Performance Atletico Mineiro 2021 Championship Winner:
+
+1. <b> 2021 Season: </b>
+   - From 38 rounds, had 17 wins at home and 9 wins away as a visitor, with a total of 26 wins.
+   - Faced 5 losses away as a visitor and 1 at home, resulting in a total of 6 losses.
+
+  1.1 2021 Season Summary:
+     - Total Wins: 26
+     - Total Losses: 6
+
+![Atletico Wins at Home and as Visitor per Season](img/atletico_better_results.png)
+
+![Atletico Loses at Home and as Visitor per Season](img/atletico_worst_results.png)
+
+
 We can understand with these results that you must have something more than 20 wins and less than 5 loses during the championship to have a calm season with the trophy in the final,
 but we also can see that with worst results than that in 2020 with Flamengo and their 14 wins and 9 loses and in 2023 with Palmeiras and their 20 wins and 8 loses that counted with a little bit lucky on the final lap of the championship as you can see here: 
 
