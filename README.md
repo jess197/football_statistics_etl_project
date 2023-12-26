@@ -45,7 +45,7 @@ The script establishes seamless a connection with AWS using boto3 AWS SDK for py
 The core component of the application orchestrates the process. It collects football events data from the Football API using the ```DataRequester``` class and uploads it to S3 using the ```DataUploader``` class.
 
 #### Kafka - Streaming 
-I setup a connector using Kafka, Snowflake, and Zookeeper. It sends messages from a Kafka topic straight to a Snowflake database. The Snowflake Connector for Kafka, or 'Kafka connector,'reads data from one or more Apache Kafka topics and loads the data into a Snowflake table. Check out the details in the docs: https://docs.snowflake.com/en/user-guide/kafka-connector-overview 
+I setup a connector using Kafka, Snowflake, and Zookeeper. It sends messages from a Kafka topic straight to a Snowflake database. The Snowflake Connector for Kafka, or 'Kafka connector,'reads data from one or more Apache Kafka topics and loads the data into a Snowflake table. Check out the details in the docs: (https://docs.snowflake.com/en/user-guide/kafka-connector-overview)
 
 #### Airflow Setup
 The project leverages the Astro CLI for Apache Airflow orchestration, this aproach facilitates the management of Apache Airflow. The following commands initialize, start, and stop the project:
