@@ -205,32 +205,30 @@ We discover the secrets of teams as hosts and visitors, revealing patterns that 
    - Total Losses: 8
 
 
-
 ![Palmeiras Wins at Home and as Visitor per Season](img/palmeiras_better_results.png)
 
 ![Palmeiras Loses at Home and as Visitor per Season](img/palmeiras_worst_results.png)
 
-    
 
 ##### Chapter 5: Home and Away Performance Flamengo 2019,2020 Championship Winner:
 
 <p> It's possible to analyse that Flamengo who won the championship </p>
 
-1. <b> 2019 Season: </b>
+1. 2019 Season:
    - From 38 rounds, had 13 wins at home and 8 wins away as a visitor, with a total of 21 wins.
    - Faced 4 losses away as a visitor and 0 at home, resulting in a total of 4 losses.
 
-  1.1 2019 Season Summary:
-     - Total Wins: 21
-     - Total Losses: 4
+1.1 2019 Season Summary:
+   - Total Wins: 21
+   - Total Losses: 4
 
-2. <b> 2020 Season: </b>
+2. 2020 Season:
    - From 38 rounds, had 9 wins at home and 6 wins away as a visitor, with a total of 14 wins.
    - Encountered 5 losses away as a visitor and 4 at home, resulting in a total of 9 losses.
 
-  2.1 2020 Season Summary:
-     - Total Wins: 14
-     - Total Losses: 9
+2.1 2020 Season Summary:
+   - Total Wins: 14
+   - Total Losses: 9
 
 
 ![Flamengo Wins at Home and as Visitor per Season](img/flamengo_better_results.png)
@@ -240,13 +238,13 @@ We discover the secrets of teams as hosts and visitors, revealing patterns that 
 
 ##### Chapter 6: Home and Away Performance Atletico Mineiro 2021 Championship Winner:
 
-1. <b> 2021 Season: </b>
+1. 2021 Season:
    - From 38 rounds, had 17 wins at home and 9 wins away as a visitor, with a total of 26 wins.
    - Faced 5 losses away as a visitor and 1 at home, resulting in a total of 6 losses.
 
-  1.1 2021 Season Summary:
-     - Total Wins: 26
-     - Total Losses: 6
+1.1 2021 Season Summary:
+   - Total Wins: 26
+   - Total Losses: 6
 
 ![Atletico Wins at Home and as Visitor per Season](img/atletico_better_results.png)
 
