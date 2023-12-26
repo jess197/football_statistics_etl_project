@@ -118,14 +118,21 @@ We follow the dance of odds during real-time games. A data stream that reflects 
 
 In 18 scenarios: 
 
-Bahia had 72% of chances of relegation
-Santos had 16% of chances of relegation
-Vasco had 11% of chances of relegation
+- Bahia had 72% of chances of relegation
+- Santos had 16% of chances of relegation
+- Vasco had 11% of chances of relegation
 
-But during the three games bellow all the teams were on the 17th place of Table at least once, and either the 3 three of them didn't wanted to be there for obvious reasons and you can se that fight in the dance of odds, first, just checkout the scenarios: 
+However, in all three of the games below, all three of the teams were on the 17th spot in the table at least once during the 3 games. Either way, you can see that fight in the dance of odds. First, have a look at the scenarios: 
 
-![Scenarios 1](img/e_se_1.png)
-![Scenarios 2](img/e_se_2.png)
+LEGEND:
+- Ganha = Win
+- Perde = Lose
+- Empata = Draw
+
+
+<img src="img/e_se_1.png" alt="e_se_1" style="vertical-align:top; margin:4px; height:400px; width:400px">
+<img src="img/e_se_2.png" alt="e_se_2" style="vertical-align:top; margin:4px; height:400px; width:400px">
+
 
 ##### Santos x Fortaleza - 38th ROUND
 
@@ -233,9 +240,13 @@ but we also can see that with worst results than that in 2020 with Flamengo and 
 
 <img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px">
 
+Leader per Round 2020 - Flamengo 2 rounds
+
 ![Leader per Round 2020 - Flamengo 2 rounds](img/flamengo.jpeg)
 
 <img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px"><img src="img/leaf.png" alt="leaf" style="vertical-align:top; margin:4px; height:40px; width:40px">
+
+Leader per Round 2023 - Palmeiras 4 rounds
 
 ![Leader per Round 2023 - Palmeiras 4 rounds](img/palmeiras.png)
 
