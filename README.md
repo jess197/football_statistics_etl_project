@@ -116,6 +116,17 @@ We follow the dance of odds during real-time games. A data stream that reflects 
 
 #### The battle against relegation in the 2023 season
 
+In 18 scenarios: 
+
+Bahia had 72% of chances of relegation
+Santos had 16% of chances of relegation
+Vasco had 11% of chances of relegation
+
+But during the three games bellow all the teams were on the 17th place of Table at least once, and either the 3 three of them didn't wanted to be there for obvious reasons and you can se that fight in the dance of odds, first, just checkout the scenarios: 
+
+![Scenarios 1](img/e_se_1.png)
+![Scenarios 2](img/e_se_2.png)
+
 ##### Santos x Fortaleza - 38th ROUND
 
 ![Santos X Fortaleza - 38 Round Full Time](img/santos_fortaleza.png)
@@ -132,6 +143,19 @@ We follow the dance of odds during real-time games. A data stream that reflects 
 ![Vasco x Bragantino - 38 Round Until 80 of 2 half](img/odds_variation_vas_bgt_80_min.png)
 
 ![Vasco x Bragantino - 38 Round After 90 of 2 half](img/odds_variation_vas_bgt_ft.png)
+
+
+##### Bahia x Atletico MG - 38th ROUND
+
+![Bahia x Atletico MG - 38 Round Full Time](img/bahia_atletico_mg.png)
+
+![Bahia x Atletico MG  - 38 Round 45 of 1 half](img/odds_variation_bah_atl_45_min.png)
+
+![Bahia x Atletico MG - 38 Round 90 of 2 half](img/odds_variation_bah_atl_ft.png)
+
+#### The End: 
+
+![Table at 38 Round](img/table.png)
 
 <b>  PS: Santos was relegated to Brasileirao Serie B 2024 </b> 
 
