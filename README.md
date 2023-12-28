@@ -14,6 +14,9 @@
 ### DATA ARCHITECTURE 
 ![Project Architecture](img/football_api_project_elt.png)
 
+### DATA LINEAGE 
+![Data Lineage](img/data_lineage.png)da
+
 ### SOLUTION  
 
 The project adopts a Lambda architecture, seamlessly blending batch and streaming layers, with data sourced from the API Football (https://www.api-football.com/).
