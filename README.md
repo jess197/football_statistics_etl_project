@@ -15,7 +15,7 @@
 ![Project Architecture](img/football_api_project_elt.png)
 
 ### DATA LINEAGE 
-![Data Lineage](img/data_lineage.png)da
+![Data Lineage](img/data_lineage.png)
 
 ### SOLUTION  
 
